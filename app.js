@@ -1,4 +1,4 @@
-/* nserta de manera dinamica texto en la pagina, esto no es un texto, ya pasa a ser un objeto!
+/*Inserta de manera dinamica texto en la pagina, esto no es un texto, ya pasa a ser un objeto!
 let titulo = document.querySelector('h1');
 let parrafo = document.querySelector('p');
 titulo.innerHTML = "ANIMATE A SUMAR 2 NUMEROS";
@@ -20,7 +20,7 @@ darTXT('p', 'segundo texto dinamico bien puesto')
     alert(`El resultado de tu suma fue de ${a}`)
 }
  */
-function numAl(){
+/* function numAl(){
     let j = Math.floor(Math.random()*10+1);
     console.log(j);
     let numUser = parseInt(prompt("Ingresa pue un numero ñeri, trata de que sea entero nms no sea gil"));
@@ -28,4 +28,20 @@ function numAl(){
         numUser = parseInt(prompt("Ingresa pue un numero ñeri, trata de que sea entero nms no sea gil parte2"));
     }
     alert("congratulations acertaste")
+} */
+//----------------------------//
+let r = NaN;
+function numAleatorio(){
+    r = Math.floor(Math.random()*10+1);
+    darTXT('p','Felicidades comenzaste un nuevo juego, proba ingresando un numero entero aqui debajo');
+    console.log(r);
+}
+function adivinar(){
+    let adiv = parseInt(document.getElementById("valorUser").value);
+    console.log(r);
+    if(adiv != r ){
+        darTXT(`p`, `No le pegaste`)
+    }
+    else darTXT('p', "Capoooo era ese");
+    return;
 }
