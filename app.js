@@ -1,17 +1,21 @@
-//Inserta de manera dinamica texto en la pagina, esto no es un texto, ya pasa a ser un objeto!
+/* nserta de manera dinamica texto en la pagina, esto no es un texto, ya pasa a ser un objeto!
 let titulo = document.querySelector('h1');
 let parrafo = document.querySelector('p');
-
-
 titulo.innerHTML = "ANIMATE A SUMAR 2 NUMEROS";
 parrafo.innerHTML = "Ingrese un numero del 1 al 10";
-
-
-
+ESTA ES UNA MANERA PRECARIA DE DAR DINAMISMO!!!!!!!!!
+ */
+function darTXT(elemento,txt){
+    let elementoHTML =document.querySelector(elemento);
+    elementoHTML.innerHTML = txt;
+}
+//Creamos una funcion que nos permite ingresar el texto dinamicamente  siempre que necesitemos, ya no hace falta mencionar el document.querySelector y despues llamar a la variable dandole un TXT, ahora con la funcion esta ya estamos haciendo eso automaticamente para cada parte del texto, esto para crear publicaciones es clave!!
+darTXT('h1', 'Primer texto dinamico bien puesto')
+darTXT('p', 'segundo texto dinamico bien puesto')
 
 function funIntentar(){
     let numIngresado = parseInt(prompt("Ingresa un numero entero"));
-    let numIngresado2 = parseInt(prompt("Ingresa otro numero entero"))
+    let numIngresado2 = parseInt(prompt("Ingresa otro numero entero"));
     let a = numIngresado + numIngresado2;
     alert(`El resultado de tu suma fue de ${a}`)
 }
