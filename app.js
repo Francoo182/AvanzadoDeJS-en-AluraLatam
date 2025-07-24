@@ -13,9 +13,19 @@ function darTXT(elemento,txt){
 darTXT('h1', 'Primer texto dinamico bien puesto')
 darTXT('p', 'segundo texto dinamico bien puesto')
 
-function funIntentar(){
+/* function funIntentar(){
     let numIngresado = parseInt(prompt("Ingresa un numero entero"));
     let numIngresado2 = parseInt(prompt("Ingresa otro numero entero"));
     let a = numIngresado + numIngresado2;
     alert(`El resultado de tu suma fue de ${a}`)
+}
+ */
+function numAl(){
+    let j = Math.floor(Math.random()*10+1);
+    console.log(j);
+    let numUser = parseInt(prompt("Ingresa pue un numero ñeri, trata de que sea entero nms no sea gil"));
+    while (numUser != j){
+        numUser = parseInt(prompt("Ingresa pue un numero ñeri, trata de que sea entero nms no sea gil parte2"));
+    }
+    alert("congratulations acertaste")
 }
