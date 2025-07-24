@@ -34,20 +34,31 @@ darTXT('p', 'segundo texto dinamico bien puesto');
 //----------------------------//
 let i = 1;
 function numAleatorio(){
+    i = 1;
     r = Math.floor(Math.random()*10+1);
+    document.getElementById(`reiniciar`).setAttribute(`disabled`, ``);
     darTXT('p','Felicidades comenzaste un nuevo juego, proba ingresando un numero entero aqui debajo');
+    document.querySelector(`#valorUser`).value = ``;
+    darTXT(`#numIntentos`, `La cantidad de intentos actual es de  ${i}`);
     console.log(r);
+    
 }
 function adivinar(){
     let adiv = parseInt(document.getElementById("valorUser").value);
+    
     console.log(r);
     console.log(i);
     if(adiv != r ){
         darTXT(`p`, `No le pegaste`);
-        let parIntentos = document.getElementById(`numIntentos`);
-        parIntentos.innerHTML = `La cantidad de intentos actual es de ${i}`
+        darTXT(`#numIntentos`, `La cantidad de intentos actual es de  ${i}`);
+        i++;
+        document.querySelector(`#valorUser`).value = ``;
     }
-    else darTXT('p', "Capoooo era ese");
-    i++
+    else {
+        document.getElementById(`reiniciar`).removeAttribute(`disabled`);
+        darTXT('p', "Capoooo era ese");}
+    
     return;
 }
+/*let parIntentos = document.getElementById(`numIntentos`);
+        parIntentos.innerHTML = `La cantidad de intentos actual es de ${i}`*/
