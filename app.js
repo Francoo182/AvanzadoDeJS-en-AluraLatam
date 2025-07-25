@@ -6,6 +6,7 @@ parrafo.innerHTML = "Ingrese un numero del 1 al 10";
 ESTA ES UNA MANERA PRECARIA DE DAR DINAMISMO!!!!!!!!!
  */
 let r = NaN;
+let a = [];
 
 function darTXT(elemento,txt){
     let elementoHTML =document.querySelector(elemento);
@@ -36,18 +37,37 @@ let i = 1;
 function numAleatorio(){
     i = 1;
     r = Math.floor(Math.random()*10+1);
+    r = numControl(r)
     document.getElementById(`reiniciar`).setAttribute(`disabled`, ``);
     darTXT('p','Felicidades comenzaste un nuevo juego, proba ingresando un numero entero aqui debajo');
     document.querySelector(`#valorUser`).value = ``;
     darTXT(`#numIntentos`, `La cantidad de intentos actual es de  ${i}`);
-    console.log(r);
-    
 }
+function numControl(n){
+    //Controlar que el numero este, si no esta, obtener otro numero aleatorio
+    //Agregar funcion que controle que si ya tuvo los 10 numeros decirle que ya jugo todos los intentos del dia
+    if(a.length <=10){
+        console.log("tamaño de la lista1 "+a.length);
+        while (a.includes(n)==true){
+            console.log("tamaño de la lista2 "+a.length);
+            console.log("CARAMBA!");
+            
+            n = Math.floor(Math.random()*10+1);
+            if (a.length >= 10){
+                darTXT(`h1`, `Ya hiciste todos los intentos del dia, vuelve mañana para mas`);
+                break;}
+            console.log("tamaño de la lista3 "+a.length);
+        }
+        console.log("tamaño de la lista4 "+a.length);
+        console.log(n+ " Numero aleatorio fuera de lista");
+        console.log("Lista: "+a);
+        a.push(n);
+        return n;
+    }
+}
+
 function adivinar(){
     let adiv = parseInt(document.getElementById("valorUser").value);
-    
-    console.log(r);
-    console.log(i);
     if(adiv != r ){
         darTXT(`p`, `No le pegaste`);
         darTXT(`#numIntentos`, `La cantidad de intentos actual es de  ${i}`);
